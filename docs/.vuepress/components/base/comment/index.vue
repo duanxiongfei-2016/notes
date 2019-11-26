@@ -4,7 +4,7 @@
  * @Author: 段雄飞
  * @Date: 2019-11-26 09:56:51
  * @LastEditors: 段雄飞
- * @LastEditTime: 2019-11-26 10:35:37
+ * @LastEditTime: 2019-11-26 10:40:17
  -->
 <template>
    <div id="vcomments"></div>
@@ -28,7 +28,7 @@ export default {
                 verify: false,
                 avatar: 'monsterid',
                 path: window.location.pathname,
-                placeholder: '欢迎给我留言，我们一起进步...',
+                placeholder: '同道中人,文明留言...',
                 visitor: true,
                 recordIP: true,
                 avatar: 'monsterid'

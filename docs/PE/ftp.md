@@ -94,3 +94,7 @@ usermod -d /workspace/ftp admin
 - 使用客户端连接服务器，实现本机与服务器之间文件上传下载
 
 - ![2.jpg](~$img/PE/2.jpg)
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

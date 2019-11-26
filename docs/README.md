@@ -50,4 +50,9 @@ footer: 赣ICP备19012606号-1
 └─ package.json
 ```
 
-如上配置后 通过 /something/product 即可访问
+如上配置后 通过 /something/product 
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>
+

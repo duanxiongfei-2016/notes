@@ -100,3 +100,7 @@ nginx -t
 ```powershell
 systemctl restart nginx
 ```
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

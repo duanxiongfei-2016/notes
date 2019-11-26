@@ -24,3 +24,7 @@ export default {
 <ClientOnly>
   <base-vModel-index />
 </ClientOnly>
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

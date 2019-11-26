@@ -1,4 +1,3 @@
-
 # Koa2
 
 ## 简介
@@ -77,3 +76,7 @@ npm start # 启动项目
 ```
 
 [基本demo结构请参考 https://github.com/duanxiongfei-2016/koa2_demo.git](https://github.com/duanxiongfei-2016/koa2_demo.git)
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

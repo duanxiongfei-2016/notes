@@ -91,3 +91,7 @@ docker rm # 移除容器
 - 举个栗子
 
     `docker run -p 80:8080 -d nginx:latest`
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

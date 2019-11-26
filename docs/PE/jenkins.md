@@ -71,3 +71,7 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 4. 配置访问URL
 
 - ![6.jpg](~$img/jenkins/6.jpg)
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

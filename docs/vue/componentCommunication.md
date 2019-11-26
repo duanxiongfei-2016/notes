@@ -202,3 +202,7 @@ export default {
 ### vuex
 
 - 兄弟组件之间的通信的使用场景很少，基本很少使用，如果有这种场景的话，一般小项目推荐使用`bus`, 大项目使用`vuex`,在后面的章节中我们会专门去挖掘`vuex`
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

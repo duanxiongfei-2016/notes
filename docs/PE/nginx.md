@@ -90,3 +90,8 @@ worker_processes  1;
 ```
 
 > 每一个sever模块就是一个虚拟主机
+
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

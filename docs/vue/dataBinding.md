@@ -194,3 +194,7 @@ class Watcher {
 ```
 
 <!-- // https://www.cnblogs.com/wangjiachen666/p/9883916.html -->
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

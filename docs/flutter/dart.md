@@ -134,3 +134,7 @@ foo = [1, 2, 3]; // Was const []
 ```dart
 baz = [42]; // Error: Constant variables can't be assigned a value.
 ```
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

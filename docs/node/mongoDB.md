@@ -421,3 +421,6 @@ const m = new PhoneModel({
 })
 console.log(m.phone) // +8613811112222
 ```
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

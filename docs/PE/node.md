@@ -51,3 +51,6 @@ Node.js 是运行在服务端的 JavaScript, 是基于 Chrome JavaScript V8 引�
     ```powershell
     source /etc/profile
     ```
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

@@ -19,3 +19,6 @@ git --version
 ```powershell
 yum remove git -y
 ```
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

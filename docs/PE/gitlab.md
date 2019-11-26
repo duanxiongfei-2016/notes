@@ -196,3 +196,7 @@ location / {
 
 # 最后重启一下nginx  =>  systemctl restart nginx
 ```
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

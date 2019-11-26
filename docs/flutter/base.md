@@ -52,3 +52,7 @@ __mac下dart的安装__
 6. VSCode下运行dart文件，用以调试。在目录文件下面新建index.dart，然后编辑dart代码，此时如果你没有安装插件的话可能不知道怎么运行，你需要在扩展搜索Dart，code runner,安装完这两个插件后 VSCode 右上角就会有个播放按钮(运行按钮),这样就可以在输出中查看运行后的输出结果
 
    ![安装信息](~$img/flutter/4.jpg)
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>
