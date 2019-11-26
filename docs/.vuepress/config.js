@@ -77,7 +77,11 @@ module.exports = {
       {
         text: '国际化',
         items: [{ text: '国际化?不存在的😂', link: '/' }]
-      }
+      },
+      {
+        text: '留言',
+        link: '/leaveMessage/base'
+      },
     ],
     search: true, // 是否显示默认的搜索框
     searchMaxSuggestions: 10, // 默认搜索框显示的搜索结果数量
