@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: 段雄飞
+ * @Date: 2019-09-19 10:23:53
+ * @LastEditors: 段雄飞
+ * @LastEditTime: 2019-11-26 17:14:55
+ */
   
 /**
  * 扩展 VuePress 应用
@@ -22,6 +30,9 @@ import './public/assets/style/index.less'
 
 // 插件
 import Plugin from './plugins'
+
+// 第三方库
+import './lib/JSClickBubble.user'
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
