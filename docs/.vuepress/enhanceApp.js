@@ -4,7 +4,7 @@
  * @Author: 段雄飞
  * @Date: 2019-09-19 10:23:53
  * @LastEditors: 段雄飞
- * @LastEditTime: 2019-11-26 17:14:55
+ * @LastEditTime: 2019-11-27 13:33:43
  */
   
 /**
@@ -22,7 +22,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 // 全局组件
 import GlobalComponents from './components/global'
 
-// 复制内容到剪贴板插件
+// 复制内容到剪贴板插件 指令v-clipboard:copy="copyData"
 import VueClipboard from 'vue-clipboard2'
 
 // 全局样式
@@ -31,8 +31,8 @@ import './public/assets/style/index.less'
 // 插件
 import Plugin from './plugins'
 
-// 第三方库
-import './lib/JSClickBubble.user'
+// 自定义js或者第三方库, 不知道为什么webpack打包的时候报错，document is not defined
+// require('./lib/JSClickBubble')
 
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数

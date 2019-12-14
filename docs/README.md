@@ -9,12 +9,15 @@ features:
   details: 尽量用最明白的话把一个知识点说透
 - title: 可传播
   details: 独码码不如众码码，欢迎给我提供笔记
-footer: 赣ICP备19012606号-1
+footer: 赣ICP备19012606号
 ---
 
-<ClientOnly>
+
+/*
+<!-- <ClientOnly>
   <base-video-index />
-</ClientOnly>
+</ClientOnly> -->
+ */
 
 # 前端笔记收藏站
 
@@ -50,7 +53,9 @@ footer: 赣ICP备19012606号-1
 └─ package.json
 ```
 
-如上配置后 通过 /something/product 
+如上配置后 通过 /something/product
+
+[markdown语法手册](https://juejin.im/editor/guide/markdown)
 
 <ClientOnly>
   <global-reward-index />

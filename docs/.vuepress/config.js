@@ -128,7 +128,7 @@ module.exports = {
         'docker'
       ],
       '/flutter/': ['base', 'dart'],
-      '/vue/': ['dataBinding', 'v-model', 'componentCommunication'],
+      '/vue/': ['dataBinding', 'v-model', 'componentCommunication', 'functionalComponent'],
       '/node/': ['koa2', 'mongoDB'],
       '/utils/': ['base'],
       '/rules/': ['eslint']
