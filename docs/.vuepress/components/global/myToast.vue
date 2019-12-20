@@ -1,5 +1,7 @@
+
+<!-- myToast.vue -->
 <template>
-    <transition name="fadeIn">
+    <transition :name="`transtion-${position}`">
         <div :class="[position, type, 'toast_box']" v-show="show">
             <p>
                 <i :class="[iconClass, 'icon']"></i>
@@ -17,13 +19,13 @@ export default {
         text: {
             type: String,
             required: false,
-            default: '123'
+            default: ''
         },
         position: {
             type: String,
             required: false,
             default: 'top',
-            validator: val => ['top', 'middle', 'bottom'].includes(val)
+            validator: val => ['topCenter', 'rightTop', 'rightBottom'].includes(val)
         },
         type: {
             type: String,
@@ -41,11 +43,6 @@ export default {
             required: false,
             default: true
         },
-        maxWidth: {
-            type: Number,
-            required: false,
-            default: 500
-        },
         callback: {
             type: Function,
             required: false,
@@ -54,13 +51,13 @@ export default {
     },
     computed: {
         iconClass () {
-            const classes = {
+            const classList = {
                 info: 'el-icon-info',
                 success: 'el-icon-success',
                 warning: 'el-icon-warning',
                 error: 'el-icon-error'
             }
-            return classes[this.type || 'info']
+            return classList[this.type || 'info']
         }
     },
     data () {
@@ -70,9 +67,7 @@ export default {
     },
     mounted () {
         this.show = true
-        if (this.autoClose) {
-            this.remove()
-        }
+        this.autoClose && this.remove()
     },
     methods: {
         handleClose () {
@@ -84,9 +79,12 @@ export default {
             }, this.duration * 1000 || 3000)
         },
         destroy () {
-            this.callback()
-            this.$destroy()
-            document.body.removeChild(this.$el)
+            this.show = false
+            setTimeout(_ => {
+                this.callback()
+                this.$destroy()
+                document.body.removeChild(this.$el)
+            }, this.position === 'topCenter' ? 300 : 500)
         }
     }
 }
@@ -95,10 +93,8 @@ export default {
 <style lang="less" scoped>
 .toast_box {
     position: fixed;
-    z-index: 100;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 500px;
+    z-index: 100000;
+    width: 400px;
     padding: 8px 40px 8px 15px;
     border-radius: 4px;
     p {
@@ -116,14 +112,18 @@ export default {
         }
     }
 }
-.top {
+.topCenter {
     top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.middle {
-    top: 50%;
+.rightTop {
+    top: 20px;
+    right: 20px;
 }
-.bottom {
+.rightBottom {
     bottom: 20px;
+    right: 20px;
 }
 .info {
     background-color: #f4f4f5;
@@ -141,39 +141,27 @@ export default {
     background-color: #fef0f0;
     color: #f56c6c;
 }
-.fadeIn-enter-active,
-.fadeIn-leave-active {
-  transition: opacity 0.3s;
+
+.transtion-topCenter-enter-active,
+.transtion-topCenter-leave-active {
+    transition: all 0.3s;
 }
-.fadeIn-enter,
-.fadeIn-leave-active {
-  opacity: 0;
+.transtion-topCenter-enter,
+.transtion-topCenter-leave-to {
+    opacity: 0;
+    top: 0;
 }
-.translate-top-enter-active,
-.translate-top-leave-active {
-  transition: all 0.3s cubic-bezier(0.36, 0.66, 0.04, 1);
+.transtion-rightBottom-enter-active,
+.transtion-rightBottom-leave-active,
+.transtion-rightTop-enter-active,
+.transtion-rightTop-leave-active {
+    transition: all 0.5s;
 }
-.translate-top-enter,
-.translate-top-leave-active {
-  transform: translateY(-50%);
-  opacity: 0;
-}
-.translate-middle-enter-active,
-.translate-middle-leave-active {
-  transition: all 0.3s cubic-bezier(0.36, 0.66, 0.04, 1);
-}
-.translate-middle-enter,
-.translate-middle-leave-active {
-  transform: translateY(80%);
-  opacity: 0;
-}
-.translate-bottom-enter-active,
-.translate-bottom-leave-active {
-  transition: all 0.3s cubic-bezier(0.36, 0.66, 0.04, 1);
-}
-.translate-bottom-enter,
-.translate-bottom-leave-active {
-  transform: translateY(100%);
-  opacity: 0;
+.transtion-rightBottom-enter,
+.transtion-rightBottom-leave-to,
+.transtion-rightTop-enter,
+.transtion-rightTop-leave-to {
+    opacity: 0;
+    right: -60%;
 }
 </style>

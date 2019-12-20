@@ -25,13 +25,16 @@
 1. 如果你想实现一个全局的 `toast` 插件， 大概的用法
 
 ```js
-this.$toast('这个作者真帅！')
+this.$toast({
+    text: '这个作者真帅！'
+})
 ```
 
 2. 光弹文案不行， 应该有一个控制弹出方向的变量
 
 ```js
-this.$toast('这个作者真帅！', {
+this.$toast({
+    text: '这个作者真帅！',
     position: 'topCenter' // 默认值: topCenter 上方弹出
 })
 ```
@@ -39,8 +42,9 @@ this.$toast('这个作者真帅！', {
 3. 全局的 `toast` 应该有很多种状态，比如常见的成功，失败，警告，普通...
 
 ```js
-this.$toast('这个作者真帅！', {
-    position: 'topCenter',
+this.$toast({
+    text: '这个作者真帅！',
+    position: 'topCenter', // 默认值: topCenter 上方弹出
     type: 'success' // success error warning info 默认值: info
 })
 ```
@@ -48,8 +52,9 @@ this.$toast('这个作者真帅！', {
 4. 应该有一个时间变量去控制多长时间自动消失
 
 ```js
-this.$toast('这个作者真帅！', {
-    position: 'topCenter',
+this.$toast({
+    text: '这个作者真帅！',
+    position: 'topCenter', // 默认值: topCenter 上方弹出
     type: 'success', // success error warning info 默认值: info
     duration: 3 // 单位秒 默认值：3
 })
@@ -58,35 +63,24 @@ this.$toast('这个作者真帅！', {
 5. 会不会存在一种业务场景，我们不需要自动消失
 
 ```js
-this.$toast('这个作者真帅！', {
-    position: 'topCenter',
+this.$toast({
+    text: '这个作者真帅！',
+    position: 'topCenter', // 默认值: topCenter 上方弹出
     type: 'success', // success error warning info 默认值: info
     duration: 3, // 单位秒 默认值：3
     autoClose: false // 默认值: true
 })
 ```
 
-6. `toast` 的内容可能会很长，因此应该会有变量去控制最大宽度
+6. 如果我想在 `toast` 结束后，触发一些回调动作，比如删除成功之后，重新刷新数据列表
 
 ```js
-this.$toast('这个作者真帅！', {
-    position: 'topCenter',
+this.$toast({
+    text: '这个作者真帅！',
+    position: 'topCenter', // 默认值: topCenter 上方弹出
     type: 'success', // success error warning info 默认值: info
     duration: 3, // 单位秒 默认值：3
     autoClose: false, // 默认值: true
-    maxWidth: 500, // 单位像素 默认值：500
-})
-```
-
-7. 如果我想在 `toast` 结束后，触发一些回调动作，比如删除成功之后，重新刷新数据列表
-
-```js
-this.$toast('这个作者真帅！', {
-    position: 'topCenter',
-    type: 'success', // success error warning info 默认值: info
-    duration: 3, // 单位秒 默认值：3
-    autoClose: false, // 默认值: true
-    maxWidth: 500, // 单位像素 默认值：500
     callback: function () {
         console.log('我已经关闭了！')
         // do something
@@ -109,11 +103,16 @@ this.$toast('这个作者真帅！', {
 ```js
 export default {
     name: 'my-toast',
+    text: {
+        type: String,
+        required: false,
+        default: ''
+    },
     position: {
         type: String,
         required: false,
         default: 'topCenter',
-        validator: val => ['topCenter', 'topRight', 'topLeft', 'bottomCenter', 'bottomRight', 'bottomLeft'].includes(val) 
+        validator: val => ['topCenter', 'rightTop', 'rightBottom'].includes(val) 
     },
     type: {
         type: String,
@@ -145,5 +144,5 @@ export default {
 ```
 
 <ClientOnly>
-  <base-plugin-demo />
+  <base-plugin-index />
 </ClientOnly>

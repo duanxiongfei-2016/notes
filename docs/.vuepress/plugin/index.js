@@ -1,8 +1,10 @@
+
+// plugin.js
 import myToast from '../components/global/myToast.vue'
 
 const TOAST = {
     install (Vue) {
-        const toast = (text, options) => {
+        const toast = (options) => {
             if (document.getElementsByClassName('toast_box').length) return
             // 使用extend将组件转为构造函数,返回一个“扩展实例构造器” 
             const Toast = Vue.extend(myToast)
@@ -14,9 +16,8 @@ const TOAST = {
             document.body.appendChild(toastDom)
         }
 
-        Vue.prototype.$toast = (text, options = {}) => {
-            if (!text || typeof text !== 'string') return
-            toast(text, options)
+        Vue.prototype.$toast = (options = {}) => {
+            toast(options)
         }
     }
 }
