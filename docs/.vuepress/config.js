@@ -128,10 +128,11 @@ module.exports = {
         'docker'
       ],
       '/flutter/': ['base', 'dart'],
-      '/vue/': ['dataBinding', 'v-model', 'componentCommunication', 'functionalComponent'],
+      '/vue/': ['dataBinding', 'v-model', 'componentCommunication', 'functionalComponent', 'plugins'],
       '/node/': ['koa2', 'mongoDB'],
       '/utils/': ['base'],
-      '/rules/': ['eslint']
+      '/rules/': ['eslint'],
+      '/css/': ['base']
     }
   },
   configureWebpack: {

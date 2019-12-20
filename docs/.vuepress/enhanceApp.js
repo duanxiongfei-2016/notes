@@ -3,8 +3,8 @@
  * @version: 
  * @Author: 段雄飞
  * @Date: 2019-09-19 10:23:53
- * @LastEditors: 段雄飞
- * @LastEditTime: 2019-11-27 13:33:43
+ * @LastEditors  : 段雄飞
+ * @LastEditTime : 2019-12-20 16:46:06
  */
   
 /**
@@ -29,7 +29,11 @@ import VueClipboard from 'vue-clipboard2'
 import './public/assets/style/index.less'
 
 // 插件
-import Plugin from './plugins'
+import Plugins from './plugins'
+
+// 插件
+import Plugin from "./plugin"
+
 
 // 自定义js或者第三方库, 不知道为什么webpack打包的时候报错，document is not defined
 // require('./lib/JSClickBubble')
@@ -45,5 +49,6 @@ export default ({
   Vue.use(ElementUI)
   Vue.use(GlobalComponents)
   Vue.use(VueClipboard)
+  Vue.use(Plugins)
   Vue.use(Plugin)
 }
