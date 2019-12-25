@@ -175,7 +175,7 @@ export default {
 ```html
 <template>
   <div>
-    <my-functional-comonent>
+    <my-functional-component>
       <div class="code_area_box" v-show="isShowCode">
         <el-divider content-position="left"></el-divider>
         <el-tooltip
@@ -204,7 +204,7 @@ export default {
         </el-tooltip>
         <slot name="code"></slot>
       </div>
-    </my-functional-comonent>
+    </my-functional-component>
   </div>
 </template>
 
@@ -249,3 +249,7 @@ export default {
 
 <style lang="less" scoped></style>
 ```
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>

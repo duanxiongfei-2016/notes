@@ -62,7 +62,8 @@ export default {
     },
     data () {
         return {
-            show: false
+            show: false,
+            timer: null
         }
     },
     mounted () {
@@ -71,17 +72,22 @@ export default {
     },
     methods: {
         handleClose () {
+            clearTimeout(this.timer)
+            this.timer = null
             this.destroy()
         },
         remove() {
-            setTimeout(_ => {
+            this.timer = setTimeout(_ => {
+                clearTimeout(this.timer)
+                this.timer = null
                 this.destroy()
             }, this.duration * 1000 || 3000)
         },
         destroy () {
             this.show = false
-            setTimeout(_ => {
+            const timer = setTimeout(_ => {
                 this.callback()
+                clearTimeout(timer)
                 this.$destroy()
                 document.body.removeChild(this.$el)
             }, this.position === 'topCenter' ? 300 : 500)

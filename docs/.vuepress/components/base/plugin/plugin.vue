@@ -24,7 +24,8 @@ export default {
                 type,
                 autoClose,
                 callback: function () {
-                    alert('我是callback,我执行了！')
+                    // alert('我是callback,我执行了！')
+                    console.log('我是callback,我执行了！')
                 }
             })
         }

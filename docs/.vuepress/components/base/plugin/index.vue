@@ -1,4 +1,3 @@
-
 <template>
 	<div class="plugin">
         <code-block>
@@ -16,15 +15,16 @@
 </template>
 
 <script>
-import MyToastCode from '!!raw-loader!../../global/myToast'
+import MyToastCode from '!!raw-loader!../../global/myToast.vue'
 import PluginStr from '!!raw-loader!../../../plugin/index'
 import ToastStr from '!!raw-loader!../../base/plugin/plugin'
 import Plugin from './plugin'
+
 export default {
     computed: {
         codeStr () {
             return `${ToastStr}${PluginStr}${MyToastCode}`
-        }          
+        }
     },
     components: {
         Plugin

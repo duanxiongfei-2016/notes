@@ -13,7 +13,7 @@
 
  // vue代码高亮插件 https://github.com/metachris/vue-highlightjs  atom-one-dark
 import VueHighlightJS from 'vue-highlightjs'
-import 'highlight.js/styles/github.css'
+import 'highlight.js/styles/solarized-light.css'
 
 // elemet UI
 import ElementUI from 'element-ui'

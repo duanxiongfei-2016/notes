@@ -130,11 +130,6 @@ export default {
         required: false,
         default: true
     },
-    maxWidth: {
-        type: Number,
-        required: false,
-        default: 500
-    },
     callback: {
         type: Function,
         required: false,
@@ -146,3 +141,8 @@ export default {
 <ClientOnly>
   <base-plugin-index />
 </ClientOnly>
+
+<ClientOnly>
+  <global-reward-index />
+</ClientOnly>
+

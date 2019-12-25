@@ -5,7 +5,7 @@ import myToast from '../components/global/myToast.vue'
 const TOAST = {
     install (Vue) {
         const toast = (options) => {
-            if (document.getElementsByClassName('toast_box').length) return
+            // if (document.getElementsByClassName('toast_box').length) return
             // 使用extend将组件转为构造函数,返回一个“扩展实例构造器” 
             const Toast = Vue.extend(myToast)
             // $vm 实例化vue实例

@@ -8,7 +8,16 @@
 .theme-default-content .code_area[class*="language-"] code {
   margin: 0 !important;
   padding: 0 !important;
-  color: #268bd2 !important;
+  color: #000 !important;
+}
+pre.code_area code {
+  color: #000;
+}
+pre.code_area code span.hljs-tag {
+  color: #000;
+}
+pre.code_area code span {
+  font-family: 'Lucida Console', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 }
 body {
   cursor: url(/assets/images/default.cur), auto;
