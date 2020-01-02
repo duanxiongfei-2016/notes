@@ -1,19 +1,17 @@
 // docs https://vuepress.vuejs.org/zh/config/#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE
-const path = require('path');
-const resolve = dir => path.join(__dirname, dir);
-const moment = require('moment');
+const path = require('path')
+const resolve = dir => path.join(__dirname, dir)
+const moment = require('moment')
 
 module.exports = {
   title: '前端笔记',
   base: '/',
-  head: [
-    ['link', { rel: 'icon', href: '/assets/images/F_1.png' }]
-  ],
+  head: [['link', { rel: 'icon', href: '/assets/images/F_1.png' }]],
   description: 'Welcome to my VuePress site',
   dest: 'dist', // 打包之后的文件目录
   port: '9898',
   markdown: {
-    lineNumbers: false // 是否展示代码块的行号
+    lineNumbers: false, // 是否展示代码块的行号
   },
   plugins: [
     '@vuepress/back-to-top',
@@ -22,10 +20,10 @@ module.exports = {
       '@vuepress/last-updated',
       {
         transformer: timestamp => {
-          moment.locale('zh-CN');
-          return moment(timestamp).fromNow();
-        }
-      }
+          moment.locale('zh-CN')
+          return moment(timestamp).fromNow()
+        },
+      },
     ],
     [
       '@vuepress/medium-zoom',
@@ -33,12 +31,13 @@ module.exports = {
         selector: 'img',
         options: {
           margin: 16,
-          scrollOffset: 40
-        }
-      }
+          scrollOffset: 40,
+        },
+      },
     ],
     [
-      'vuepress-plugin-helper-live2d', {
+      'vuepress-plugin-helper-live2d',
+      {
         live2d: {
           // 是否启用(关闭请设置为false)(default: true)
           enable: true,
@@ -46,21 +45,21 @@ module.exports = {
           // https://github.com/JoeyBling/hexo-theme-yilia-plus/wiki/live2d%E6%A8%A1%E5%9E%8B%E5%8C%85%E5%B1%95%E7%A4%BA
           model: 'epsilon2_1',
           display: {
-            position: "right", // 显示位置：left/right(default: 'right')
+            position: 'right', // 显示位置：left/right(default: 'right')
             width: 135, // 模型的长度(default: 135)
             height: 300, // 模型的高度(default: 300)
             hOffset: 65, //  水平偏移(default: 65)
             vOffset: 0, //  垂直偏移(default: 0)
           },
           mobile: {
-            show: false // 是否在移动设备上显示(default: false)
+            show: false, // 是否在移动设备上显示(default: false)
           },
           react: {
-            opacity: 0.8 // 模型透明度(default: 0.8)
-          }
-        }
-      }
-    ]
+            opacity: 0.8, // 模型透明度(default: 0.8)
+          },
+        },
+      },
+    ],
   ],
   // 主题配置
   themeConfig: {
@@ -75,40 +74,40 @@ module.exports = {
     nav: [
       {
         text: '指南',
-        link: '/home/base'
+        link: '/home/base',
       },
       {
         text: '笔记',
         items: [
           {
             text: 'PE',
-            link: '/PE/nginx'
+            link: '/PE/nginx',
           },
           {
             text: 'vue',
-            link: '/vue/dataBinding'
+            link: '/vue/dataBinding',
           },
           {
             text: 'flutter',
-            link: '/flutter/base'
+            link: '/flutter/base',
           },
           {
             text: 'node',
-            link: '/node/koa2'
+            link: '/node/koa2',
           },
           {
             text: '代码规范',
-            link: '/rules/eslint'
-          }
-        ]
+            link: '/rules/eslint',
+          },
+        ],
       },
       {
         text: '国际化',
-        items: [{ text: '国际化?不存在的😂', link: '/' }]
+        items: [{ text: '国际化?不存在的😂', link: '/' }],
       },
       {
         text: '留言',
-        link: '/leaveMessage/base'
+        link: '/leaveMessage/base',
       },
     ],
     search: true, // 是否显示默认的搜索框
@@ -125,23 +124,29 @@ module.exports = {
         // 'nvm',
         'node',
         'jenkins',
-        'docker'
+        'docker',
       ],
       '/flutter/': ['base', 'dart'],
-      '/vue/': ['dataBinding', 'v-model', 'componentCommunication', 'functionalComponent', 'plugins'],
-      '/node/': ['koa2', 'mongoDB'],
+      '/vue/': [
+        'dataBinding',
+        'v-model',
+        'componentCommunication',
+        'functionalComponent',
+        'plugins',
+      ],
+      '/node/': ['koa2', 'mongoDB', 'redis', 'mysql'],
       '/utils/': ['base'],
-      '/rules/': ['eslint'],
-      '/css/': ['base']
-    }
+      '/rules/': ['eslint', 'vue'],
+      '/css/': ['base'],
+    },
   },
   configureWebpack: {
     resolve: {
       alias: {
         '@': resolve('../'),
-        '$img': resolve('./public/assets/images'),
-        '$tools': resolve('./utils/index')
-      }
-    }
-  }
-};
+        $img: resolve('./public/assets/images'),
+        $tools: resolve('./utils/index'),
+      },
+    },
+  },
+}
